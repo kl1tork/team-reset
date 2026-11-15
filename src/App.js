@@ -1,14 +1,14 @@
- import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
-export default function App() {
+export default function Home() {
   const [open, setOpen] = useState(false);
 
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [tariff, setTariff] = useState("BASIC");
+  const [tariff, setTariff] = useState("Диагностика команды");
 
-const [requests, setRequests] = useState([]);
+  const [requests, setRequests] = useState([]);
 
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("requests") || "[]");
@@ -40,7 +40,6 @@ const [requests, setRequests] = useState([]);
 
   return (
     <div className="page">
-
       <div className="goldLight"></div>
 
       {/* HEADER */}
@@ -50,60 +49,98 @@ const [requests, setRequests] = useState([]);
 
       {/* HERO */}
       <section className="section">
-        <h1>Инвестиция в результат бизнеса</h1>
-        <p>Деньги — это система решений внутри команды</p>
+        <h1>TEAM RESET</h1>
+        <h2 className="goldTitle">
+          Система диагностики и трансформации команд
+        </h2>
+        <p>
+          Помогаем собственникам выявлять скрытые процессы внутри команды,
+          устранять управленческие барьеры и выстраивать систему,
+          в которой каждый сотрудник работает на достижение бизнес-целей.
+        </p>
+        <p>
+          TEAM RESET — это комплексная работа с психологическими,
+          организационными и управленческими факторами,
+          влияющими на эффективность бизнеса.
+        </p>
       </section>
 
       {/* ABOUT */}
       <section className="section">
         <h2>О нас</h2>
         <p>
-          Team Reset — система диагностики и трансформации команд.
+          TEAM RESET — система глубокой диагностики и трансформации команд.
+          Мы помогаем собственнику получить объективную картину состояния
+          бизнеса изнутри: увидеть скрытый саботаж, отсутствие
+          ответственности, зависимость от руководителя, конфликты,
+          нарушения коммуникации и сопротивление изменениям.
+        </p>
+        <p>
+          Наша задача — не просто выявить проблемы, а определить причины,
+          разработать индивидуальные рекомендации и сопровождать команду
+          в процессе изменений.
         </p>
       </section>
 
-{/* PROBLEMS */}
-<section className="section">
+      {/* PROBLEMS */}
+      <section className="section">
+        <h2 className="goldTitle">Проблемы бизнеса</h2>
 
-  <h2 className="goldTitle">Проблемы бизнеса</h2>
+        <div className="grid">
+          <div className="card">
+            <h3>Зависимость от собственника</h3>
+            <p>
+              Все решения проходят через руководителя.
+              Команда не берёт ответственность на себя.
+            </p>
+          </div>
 
-  <div className="grid">
+          <div className="card">
+            <h3>Скрытый саботаж</h3>
+            <p>
+              Внутреннее сопротивление, невыполнение договорённостей
+              и неочевидные конфликты.
+            </p>
+          </div>
 
-    <div className="card">
-      <h3>Кассовый разрыв</h3>
-      <p>Деньги есть, но ими невозможно пользоваться вовремя.</p>
-    </div>
+          <div className="card">
+            <h3>Отсутствие ответственности</h3>
+            <p>
+              Сотрудники избегают самостоятельных решений
+              и перекладывают ответственность.
+            </p>
+          </div>
 
-    <div className="card">
-      <h3>Нет стабильного дохода</h3>
-      <p>Доход не системный, а случайный.</p>
-    </div>
+          <div className="card">
+            <h3>Нарушение коммуникации</h3>
+            <p>
+              Конфликты между отделами, недопонимание
+              и отсутствие согласованности.
+            </p>
+          </div>
 
-    <div className="card">
-      <h3>Нет масштабирования</h3>
-      <p>Рост требует постоянного участия руководителя.</p>
-    </div>
+          <div className="card">
+            <h3>Эмоциональное выгорание</h3>
+            <p>
+              Снижение мотивации, вовлечённости и работоспособности команды.
+            </p>
+          </div>
 
-    <div className="card">
-      <h3>Зависимость от владельца</h3>
-      <p>Команда не берёт ответственность и решения на себя.</p>
-    </div>
-
-    <div className="card">
-      <h3>Скрытый саботаж</h3>
-      <p>Проблемы внутри системы, а не на рынке.</p>
-    </div>
-
-  </div>
-</section>
+          <div className="card">
+            <h3>Сопротивление изменениям</h3>
+            <p>
+              Психологические и командные барьеры,
+              мешающие развитию и масштабированию бизнеса.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* CASES */}
       <section className="section">
-
-        <h2>Кейсы трансформации</h2>
+        <h2 className="goldTitle">Кейсы трансформации</h2>
 
         <div className="card caseCard">
-
           <div className="bigNumber smallGold">
             1 000 000 000 ₸
           </div>
@@ -124,14 +161,11 @@ const [requests, setRequests] = useState([]);
 
           <div className="caseBox">
             <h3>РЕЗУЛЬТАТ</h3>
-            <p>Системный рост и прибыль > 1 млрд ₸</p>
+            <p>Системный рост и прибыль более 1 млрд ₸</p>
           </div>
-
         </div>
 
-        {/* CASE 2 */}
         <div className="card caseCard">
-
           <div className="bigNumber smallGold">
             +42% дохода
           </div>
@@ -154,12 +188,9 @@ const [requests, setRequests] = useState([]);
             <h3>РЕЗУЛЬТАТ</h3>
             <p>Стабильный рост дохода</p>
           </div>
-
         </div>
 
-        {/* CASE 3 */}
         <div className="card caseCard">
-
           <div className="bigNumber smallGold">
             -70% конфликтов
           </div>
@@ -182,119 +213,216 @@ const [requests, setRequests] = useState([]);
             <h3>РЕЗУЛЬТАТ</h3>
             <p>Спокойная и управляемая команда</p>
           </div>
-
         </div>
-
       </section>
 
-    {/* TARIFS */}
-<section className="section">
-  <h2>Тарифы</h2>
+      {/* DIAGNOSTICS */}
+      <section className="section">
+        <h2 className="goldTitle">Диагностика команды</h2>
 
-  <div className="grid">
+        <p>
+          Первый этап комплексной работы — исследование состояния команды,
+          выявление скрытых процессов и определение точек роста бизнеса.
+        </p>
 
-    {/* BASIC */}
-    <div className="card">
-      <h3>BASIC</h3>
-      <p>180 000 ₸ / чел</p>
+        <div className="card">
+          <h3>Что входит в диагностику</h3>
 
-      <ul>
-        <li>Групповая работа с куратором</li>
-        <li>Базовая психодиагностика (5 тестов)</li>
-        <li>Оценка состояния команды</li>
-        <li>Стратегическая Т-игра</li>
-        <li>Расстановки до 5 человек</li>
-        <li>Рекомендации руководителю</li>
-      </ul>
+          <ul>
+            <li>Индивидуальная диагностика собственника бизнеса.</li>
+            <li>Индивидуальная диагностика ключевых руководителей.</li>
+            <li>Психометрическое тестирование стресса и выгорания.</li>
+            <li>Оценка ответственности, мотивации и вовлечённости.</li>
+            <li>Анализ конфликтности, коммуникации и фрустрации.</li>
+            <li>Анализ распределения ролей и командной динамики.</li>
+            <li>Стратегическая Т-игра для диагностики команды.</li>
+            <li>Выявление скрытых конфликтов и сопротивления изменениям.</li>
+            <li>Анализ зависимости команды от собственника.</li>
+            <li>Итоговый PDF-отчёт с картой команды и рекомендациями.</li>
+          </ul>
 
-      <button onClick={() => { setTariff("BASIC"); setOpen(true); }}>
-        Выбрать BASIC
-      </button>
-    </div>
+          <h3>Результат</h3>
+          <p>
+            Собственник получает объективную картину состояния команды,
+            выявленные риски и сильные стороны, а также рекомендации
+            по распределению ролей, коммуникации и управленческим решениям.
+          </p>
 
-    {/* PRO */}
-    <div className="card">
-      <h3>PRO</h3>
-      <p>250 000 ₸ / чел</p>
+          <p>
+            <strong>Продолжительность: 7–10 дней.</strong>
+          </p>
+        </div>
+      </section>
 
-      <ul>
-        <li>Групповая работа с куратором</li>
-        <li>Расширенная психодиагностика (5+ тестов)</li>
-        <li>Ежемесячные тестирования</li>
-        <li>Работа с ответственностью команды</li>
-        <li>Стратегическая Т-игра</li>
-        <li>Расстановочный день</li>
-        <li>Разбор командных конфликтов</li>
-        <li>Работа с коммуникацией внутри команды</li>
-        <li>Рекомендации руководителю</li>
-      </ul>
+      {/* TARIFFS */}
+      <section className="section">
+        <h2>Программы TEAM RESET</h2>
 
-      <button onClick={() => { setTariff("PRO"); setOpen(true); }}>
-        Выбрать PRO
-      </button>
-    </div>
+        <div className="grid">
 
-    {/* VIP */}
-    <div className="card vip">
-      <h3>VIP</h3>
-      <p>380 000 ₸ / чел</p>
+          {/* DIAGNOSTICS */}
+          <div className="card">
+            <h3>TEAM RESET DIAGNOSTICS</h3>
 
-      <ul>
-        <li>Полная психодиагностика</li>
-        <li>Ежемесячные тестирования</li>
-        <li>Сопровождение психологом</li>
-        <li>Сопровождение куратором</li>
-        <li>Работа с динамикой команды</li>
-        <li>Эмоциональная сепарация</li>
-        <li>Стратегические Т-игры</li>
-        <li>Расстановки 1 раз в 2 месяца</li>
-        <li>Работа с выгоранием</li>
-        <li>Работа с лидерством</li>
-        <li>Работа с делегированием</li>
-        <li>Стратегические встречи с собственником</li>
-        <li>Финальный аналитический отчёт</li>
-      </ul>
+            <div className="bigNumber smallGold">
+              120 000 ₸
+            </div>
 
-      <button onClick={() => { setTariff("VIP"); setOpen(true); }}>
-        Выбрать VIP
-      </button>
-    </div>
-  </div>
-</section>
+            <p>За одного участника</p>
+            <p>Продолжительность: 7–10 дней</p>
 
- <section className="section">
-  <h2 className="goldTitle">Отзывы клиентов</h2>
+            <ul>
+              <li>Диагностика собственника бизнеса.</li>
+              <li>Диагностика ключевых руководителей.</li>
+              <li>Психометрическое тестирование команды.</li>
+              <li>Оценка стресса и выгорания.</li>
+              <li>Оценка ответственности и мотивации.</li>
+              <li>Анализ конфликтов и коммуникации.</li>
+              <li>Стратегическая командная Т-игра.</li>
+              <li>Итоговый аналитический PDF-отчёт.</li>
+              <li>Рекомендации собственнику.</li>
+            </ul>
 
-  <div className="grid">
+            <button onClick={() => {
+              setTariff("Диагностика команды");
+              setOpen(true);
+            }}>
+              Выбрать диагностику
+            </button>
+          </div>
 
-    <div className="card">
-      <p className="reviewText">
-        “После диагностики команда перестала терять деньги. Стало понятно, где реальная проблема в системе.”
-      </p>
-      <div className="reviewAuthor">— CEO, строительный бизнес</div>
-    </div>
+          {/* PRO */}
+          <div className="card">
+            <h3>TEAM RESET PRO</h3>
 
-    <div className="card">
-      <p className="reviewText">
-        “Мы убрали хаос в управлении. Руководитель перестал тянуть всё на себе.”
-      </p>
-      <div className="reviewAuthor">— Основатель e-commerce проекта</div>
-    </div>
+            <div className="bigNumber smallGold">
+              200 000 ₸
+            </div>
 
-    <div className="card">
-      <p className="reviewText">
-        “Рост выручки пошёл уже в первый месяц. Команда стала работать как система, а не как люди по отдельности.”
-      </p>
-      <div className="reviewAuthor">— Руководитель отдела продаж</div>
-    </div>
+            <p>За одного участника в месяц</p>
+            <p>Продолжительность: 3, 6 или 12 месяцев</p>
 
-  </div>
-</section>
+            <ul>
+              <li>Диагностика собственника и топ-менеджеров.</li>
+              <li>Разработка дорожной карты сопровождения бизнеса.</li>
+              <li>Еженедельная индивидуальная сессия с собственником.</li>
+              <li>Индивидуальная работа с каждым топ-менеджером.</li>
+              <li>Работа с психологическими барьерами и сопротивлением.</li>
+              <li>Развитие ответственности и личной эффективности.</li>
+              <li>Работа с командными конфликтами.</li>
+              <li>Улучшение межотдельной коммуникации.</li>
+              <li>Групповые тренинги, игры и мастер-классы.</li>
+              <li>Ежемесячное тестирование динамики команды.</li>
+              <li>Еженедельные аналитические отчёты собственнику.</li>
+            </ul>
 
+            <h3>Форматы индивидуальной работы</h3>
+
+            <p>
+              <strong>Формат 1:</strong> собственник и каждый ключевой
+              топ-менеджер проходят индивидуальную сессию еженедельно.
+            </p>
+
+            <p>
+              <strong>Формат 2:</strong> собственник проходит сессию
+              еженедельно, каждый топ-менеджер — дважды в месяц.
+              Между встречами руководители самостоятельно внедряют решения.
+            </p>
+
+            <button onClick={() => {
+              setTariff("TEAM RESET PRO");
+              setOpen(true);
+            }}>
+              Выбрать PRO
+            </button>
+          </div>
+
+          {/* VIP */}
+          <div className="card vip">
+            <h3>TEAM RESET VIP</h3>
+
+            <div className="bigNumber smallGold">
+              2 500 000 ₸
+            </div>
+
+            <p>В месяц</p>
+            <p>Продолжительность: от 6 месяцев</p>
+
+            <ul>
+              <li>Полная психодиагностика команды.</li>
+              <li>Индивидуальная дорожная карта трансформации.</li>
+              <li>Персональная работа с собственником.</li>
+              <li>Индивидуальные сессии с каждым топ-менеджером.</li>
+              <li>Работа двух психологов.</li>
+              <li>Персональный куратор проекта.</li>
+              <li>Групповые тренинги и стратегические сессии.</li>
+              <li>Работа с командной динамикой и конфликтами.</li>
+              <li>Работа с эмоциональным выгоранием.</li>
+              <li>Развитие лидерства и ответственности.</li>
+              <li>Работа с делегированием.</li>
+              <li>Разработка правил и регламентов.</li>
+              <li>Создание инструкций и систем оценки.</li>
+              <li>Стратегические встречи с собственником.</li>
+              <li>Еженедельные и ежемесячные отчёты.</li>
+              <li>Сопровождение внедрения изменений.</li>
+            </ul>
+
+            <button onClick={() => {
+              setTariff("TEAM RESET VIP");
+              setOpen(true);
+            }}>
+              Выбрать VIP
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* REVIEWS */}
+      <section className="section">
+        <h2 className="goldTitle">Отзывы клиентов</h2>
+
+        <div className="grid">
+          <div className="card">
+            <p className="reviewText">
+              “После диагностики команда перестала терять деньги.
+              Стало понятно, где реальная проблема в системе.”
+            </p>
+            <div className="reviewAuthor">
+              — CEO, строительный бизнес
+            </div>
+          </div>
+
+          <div className="card">
+            <p className="reviewText">
+              “Мы убрали хаос в управлении.
+              Руководитель перестал тянуть всё на себе.”
+            </p>
+            <div className="reviewAuthor">
+              — Основатель e-commerce проекта
+            </div>
+          </div>
+
+          <div className="card">
+            <p className="reviewText">
+              “Рост выручки пошёл уже в первый месяц.
+              Команда стала работать как система,
+              а не как люди по отдельности.”
+            </p>
+            <div className="reviewAuthor">
+              — Руководитель отдела продаж
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* CTA */}
       <section className="section">
         <h2>Готовы начать?</h2>
+
+        <p>
+          Начните с диагностики команды или обсудите индивидуальную
+          программу сопровождения бизнеса.
+        </p>
 
         <button onClick={() => setOpen(true)}>
           Оставить заявку
@@ -307,7 +435,6 @@ const [requests, setRequests] = useState([]);
         </button>
       </section>
 
-
       {/* MODAL */}
       {open && (
         <div className="modalOverlay" onClick={() => setOpen(false)}>
@@ -315,13 +442,26 @@ const [requests, setRequests] = useState([]);
 
             <h2>Заявка</h2>
 
-            <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Имя" />
-            <input value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="WhatsApp" />
+            <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Имя"
+            />
 
-            <select value={tariff} onChange={(e) => setTariff(e.target.value)}>
-              <option>BASIC</option>
-              <option>PRO</option>
-              <option>VIP</option>
+            <input
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="WhatsApp"
+            />
+
+            <select
+              value={tariff}
+              onChange={(e) => setTariff(e.target.value)}
+            >
+              <option>Диагностика команды</option>
+              <option>TEAM RESET PRO</option>
+              <option>TEAM RESET VIP</option>
+              <option>Консультация</option>
             </select>
 
             <button onClick={sendRequest}>
@@ -335,7 +475,6 @@ const [requests, setRequests] = useState([]);
           </div>
         </div>
       )}
-
     </div>
   );
 }
